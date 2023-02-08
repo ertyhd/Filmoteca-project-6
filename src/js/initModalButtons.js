@@ -49,7 +49,8 @@ export const initStorageButton = data => {
     }
     if (value.find(el => el.id === data.id) !== undefined) {
       if (document.URL === 'http://localhost:1234/index.html#') {
-        button.textContent = 'Added';
+        button.style.background = '#aea79f';
+        button.textContent = `Added in ${status}`;
         button.setAttribute('disabled', true);
       } else {
         button.textContent = `Remove from ${status}`;
@@ -79,8 +80,9 @@ export const initStorageButton = data => {
         document.URL === 'http://localhost:1234/index.html#'
         // 'https://bogdan2120.github.io/project-6-filmoteka/my_library.html#'
       ) {
+        button.style.background = '#aea79f';
         addStorageMovie(status, vol);
-        button.textContent = 'Added';
+        button.textContent = `Added in ${status}`;
         button.setAttribute('disabled', true);
       } else {
         addStorageMovie(status, vol);
