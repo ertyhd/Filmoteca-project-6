@@ -1,6 +1,3 @@
-// import * as rerenderLibrary from './my-library';
-// const loadLib = require('./my-library');
-
 const load = key => {
   try {
     const serializedState = localStorage.getItem(key);
@@ -48,7 +45,10 @@ export const initStorageButton = data => {
       value = [];
     }
     if (value.find(el => el.id === data.id) !== undefined) {
-      if (document.URL === 'http://localhost:1234/index.html#') {
+      if (
+        document.URL ===
+        'https://ertyhd.github.io/Filmoteca-project-6/index.html#'
+      ) {
         button.style.background = '#aea79f';
         button.textContent = `Added in ${status}`;
         button.setAttribute('disabled', true);
@@ -72,12 +72,10 @@ export const initStorageButton = data => {
       localStorage.removeItem(status);
       save(status, dataArr);
       button.textContent = `Add to ${status}`;
-      if (document.URL === 'http://localhost:1234/my_library.html#') {
-        // loadLib.loadWatchedFilms();
-      }
     } else {
       if (
-        document.URL === 'http://localhost:1234/index.html#'
+        document.URL ===
+        'https://ertyhd.github.io/Filmoteca-project-6/index.html#'
         // 'https://bogdan2120.github.io/project-6-filmoteka/my_library.html#'
       ) {
         button.style.background = '#aea79f';
