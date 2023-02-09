@@ -47,8 +47,8 @@ export const initStorageButton = data => {
     if (value.find(el => el.id === data.id) !== undefined) {
       if (
         document.URL ===
-        'https://ertyhd.github.io/Filmoteca-project-6/index.html#'
-        // 'http://localhost:1234/index.html#'
+        'https://ertyhd.github.io/Filmoteca-project-6/index.html'
+        // 'http://localhost:1234/index.html'
         // 'https://ertyhd.github.io/Filmoteca-project-6/index.html#'
       ) {
         button.style.background = '#aea79f';
@@ -77,8 +77,8 @@ export const initStorageButton = data => {
     } else {
       if (
         document.URL ===
-        'https://ertyhd.github.io/Filmoteca-project-6/index.html#'
-        // 'http://localhost:1234/index.html#'
+        'https://ertyhd.github.io/Filmoteca-project-6/index.html'
+        // 'http://localhost:1234/index.html'
         // 'https://ertyhd.github.io/Filmoteca-project-6/index.html#'
         // 'https://bogdan2120.github.io/project-6-filmoteka/my_library.html#'
       ) {

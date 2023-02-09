@@ -10,7 +10,7 @@ import SVG from '../images/symbol-arial.svg';
 
 const newApiFetches = new NewApiFetches();
 
-const filmModal = document.querySelector('body');
+const filmModal = document.querySelector('.cards-containe');
 const loading = document.querySelector('.spinner-box');
 
 filmModal.addEventListener('click', selectFilmSlider);
