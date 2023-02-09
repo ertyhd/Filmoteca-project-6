@@ -1,7 +1,7 @@
-const basicLightbox = require('basiclightbox');
-
-import 'basiclightbox/dist/basicLightbox.min.css';
 import modal from '../templates/modal.hbs';
+import * as basicLightbox from 'basiclightbox';
+import 'basiclightbox/dist/basicLightbox.min.css';
+
 import { initStorageButton } from './initModalButtons';
 import NewApiFetches from './apiFetches';
 import Notiflix from 'notiflix';
@@ -15,16 +15,8 @@ const loading = document.querySelector('.spinner-box');
 
 filmModal.addEventListener('click', selectFilmSlider);
 
-// const refresh = () => {
-//   location.reload();
-// };
-
-const refs = {
-  buttonWatched: document.querySelector('.modal-watched-btn'),
-  buttonQueue: document.querySelector('.modal-queue-btn'),
-};
-
 function selectFilmSlider(event) {
+  event.preventDefault();
   if (event.target.nodeName !== 'IMG') {
     return;
   }
@@ -36,7 +28,8 @@ const renfetch = id => {
   newApiFetches
     .fetchDetailsMovie(id)
     .then(data => {
-      const instance = basicLightbox.create(modal(data, SVG));
+      const modalCreate = modal(data, SVG);
+      const instance = basicLightbox.create(modalCreate);
       instance.show();
       initStorageButton(data);
       const closeBtnCard = instance
@@ -50,8 +43,6 @@ const renfetch = id => {
           instance.close();
         }
       }
-
-      //====
     })
     .catch(error => {
       Notiflix.Notify.failure('Sorry! There are no movie information found');

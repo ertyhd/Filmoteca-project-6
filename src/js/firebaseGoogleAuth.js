@@ -28,16 +28,16 @@ export const auth = getAuth(app);
 firebase.initializeApp(firebaseConfig);
 const headerMyLibrary = document.querySelector('#header-myLibrary');
 
-// headerMyLibrary.addEventListener('click', checkLogInForMyLibrary);
+headerMyLibrary.addEventListener('click', checkLogInForMyLibrary);
 
-// function checkLogInForMyLibrary() {
-//   if (auth.currentUser === null) {
-//     headerMyLibrary.removeAttribute('href');
-//     Notiflix.Report.info('Oops', 'Please LOGIN In first ', 'Okay');
-//   } else {
-//     headerMyLibrary.setAttribute('href', './my_library.html');
-//   }
-// }
+function checkLogInForMyLibrary() {
+  if (auth.currentUser === null) {
+    headerMyLibrary.removeAttribute('href');
+    Notiflix.Report.info('Oops', 'Please LOGIN In first ', 'Okay');
+  } else {
+    headerMyLibrary.setAttribute('href', './my_library.html');
+  }
+}
 
 document.getElementById('dashboard').style.display = 'none';
 
