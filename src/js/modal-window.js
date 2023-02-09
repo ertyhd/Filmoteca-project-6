@@ -28,7 +28,11 @@ const renfetch = id => {
   newApiFetches
     .fetchDetailsMovie(id)
     .then(data => {
-      const modalCreate = modal(data, SVG);
+      const genresJoin = data.genres.join(', ');
+      const popularityFixed = data.popularity.toFixed(1);
+      const voteFixed = data.vote_average.toFixed(1);
+      const value = { ...data, genresJoin, SVG, popularityFixed, voteFixed };
+      const modalCreate = modal(value);
       const instance = basicLightbox.create(modalCreate);
       instance.show();
       initStorageButton(data);
